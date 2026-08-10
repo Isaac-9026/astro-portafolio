@@ -3,6 +3,33 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Inicio | Portafolio Isaac Paucar">
-  <h1 class="text-4xl font-bold mb-4">Hola, soy Isaac Paucar</h1>
-  <p class="text-lg">Desarrollador Full-Stack</p>
+  <section class="pt-16 pb-12 md:pt-24 md:pb-20 max-w-3xl">
+    <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+      Hola, soy <span class="text-[var(--accent-color)] block sm:inline">Isai Isaac</span>
+    </h1>
+    
+    <p class="text-xl md:text-2xl font-medium mb-4 opacity-90">
+      Desarrollador Full-Stack trabajando con JavaScript/TypeScript, Java y Python.
+    </p>
+    
+    <p class="text-lg mb-10 leading-relaxed opacity-80">
+      Construyo soluciones robustas y eficientes enfocadas en resolver problemas concretos de negocio, aportando valor técnico en cada etapa del desarrollo de software.
+    </p>
+    
+    <div class="flex flex-col sm:flex-row gap-4 mb-20">
+      <a href="/proyectos" class="bg-[var(--accent-color)] text-white hover:opacity-90 font-semibold px-8 py-3 rounded-lg text-center transition-opacity">
+        Ver proyectos
+      </a>
+      <a href="/cv-isaac-paucar.pdf" download target="_blank" rel="noopener noreferrer" class="bg-transparent hover:bg-[var(--text-color)]/10 text-[var(--text-color)] font-semibold px-8 py-3 rounded-lg text-center transition-colors border border-[var(--text-color)]/30">
+        Descargar CV
+      </a>
+    </div>
+
+    <div class="border-t border-[var(--text-color)]/20 pt-16">
+      <h2 class="text-2xl font-bold mb-4 opacity-100">Sobre mí</h2>
+      <p class="text-lg leading-relaxed opacity-80">
+        Estudiante de Ingeniería de Software, con experiencia trabajando en proyectos reales de desarrollo web y análisis de datos. Me interesa construir software que resuelva problemas concretos, con atención tanto al código como a la experiencia de quien lo usa.
+      </p>
+    </div>
+  </section>
 </Layout>
