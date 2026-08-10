@@ -1,0 +1,66 @@
+---
+const pathname = Astro.url.pathname;
+const isHome = pathname === '/';
+const isProyectos = pathname.startsWith('/proyectos');
+const isContacto = pathname === '/contacto';
+
+const linkClass = "hover:text-[var(--accent-color)] transition-colors duration-200 font-medium";
+const activeClass = "text-[var(--accent-color)]";
+---
+
+<header class="sticky top-0 z-50 bg-[var(--bg-color)]/80 backdrop-blur-md border-b border-gray-800">
+  <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="text-xl font-bold tracking-tight hover:text-[var(--accent-color)] transition-colors duration-200">
+      Isaac Paucar
+    </a>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex gap-8">
+      <a href="/" class:list={[linkClass, { [activeClass]: isHome }]}>Inicio</a>
+      <a href="/proyectos" class:list={[linkClass, { [activeClass]: isProyectos }]}>Proyectos</a>
+      <a href="/contacto" class:list={[linkClass, { [activeClass]: isContacto }]}>Contacto</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button 
+      id="mobile-menu-btn"
+      class="md:hidden p-2 text-gray-300 hover:text-white focus:outline-none" 
+      aria-label="Abrir menú"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" x2="20" y1="12" y2="12" />
+        <line x1="4" x2="20" y1="6" y2="6" />
+        <line x1="4" x2="20" y1="18" y2="18" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Navigation Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-[var(--bg-color)] border-b border-gray-800 absolute w-full left-0 shadow-xl">
+    <nav class="flex flex-col container mx-auto px-4 py-4 gap-4">
+      <a href="/" class:list={["block py-2", linkClass, { [activeClass]: isHome }]}>Inicio</a>
+      <a href="/proyectos" class:list={["block py-2", linkClass, { [activeClass]: isProyectos }]}>Proyectos</a>
+      <a href="/contacto" class:list={["block py-2", linkClass, { [activeClass]: isContacto }]}>Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+
+    //Close menu when clicking a link inside it
+    const links = menu.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.add('hidden');
+      });
+    });
+  }
+</script>
