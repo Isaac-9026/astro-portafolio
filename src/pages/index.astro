@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import SkillBadge from '../components/SkillBadge.astro';
 ---
 
 <Layout title="Inicio | Portafolio Isaac Paucar">
@@ -30,6 +31,55 @@ import Layout from '../layouts/Layout.astro';
       <p class="text-lg leading-relaxed opacity-80">
         Estudiante de Ingeniería de Software, con experiencia trabajando en proyectos reales de desarrollo web y análisis de datos. Me interesa construir software que resuelva problemas concretos, con atención tanto al código como a la experiencia de quien lo usa.
       </p>
+    </div>
+
+    <div class="border-t border-[var(--text-color)]/20 pt-16 mt-16">
+      <h2 class="text-2xl font-bold mb-8 opacity-100">Stack técnico</h2>
+      
+      <div class="flex flex-col gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4 opacity-90">Frontend</h3>
+          <div class="flex flex-wrap gap-3">
+            <SkillBadge name="HTML" />
+            <SkillBadge name="CSS" />
+            <SkillBadge name="Tailwind CSS" />
+            <SkillBadge name="JavaScript" />
+            <SkillBadge name="TypeScript" />
+            <SkillBadge name="React" />
+            <SkillBadge name="Next.js" />
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4 opacity-90">Backend</h3>
+          <div class="flex flex-wrap gap-3">
+            <SkillBadge name="Node.js" />
+            <SkillBadge name="Express" />
+            <SkillBadge name="Spring Boot" />
+            <SkillBadge name="FastAPI" />
+            <SkillBadge name="PHP" />
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4 opacity-90">Bases de datos</h3>
+          <div class="flex flex-wrap gap-3">
+            <SkillBadge name="PostgreSQL" />
+            <SkillBadge name="MySQL" />
+            <SkillBadge name="MariaDB" />
+            <SkillBadge name="NoSQL" />
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-lg font-semibold mb-4 opacity-90">DevOps y herramientas</h3>
+          <div class="flex flex-wrap gap-3">
+            <SkillBadge name="Docker" />
+            <SkillBadge name="Git" />
+            <SkillBadge name="GitHub" />
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </Layout>
