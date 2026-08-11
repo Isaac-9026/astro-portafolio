@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SkillBadge from '../components/SkillBadge.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
 ---
 
 <Layout title="Inicio | Portafolio Isaac Paucar">
@@ -80,6 +81,27 @@ import SkillBadge from '../components/SkillBadge.astro';
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="border-t border-[var(--text-color)]/20 pt-16 mt-16">
+      <h2 class="text-2xl font-bold mb-8 opacity-100">Experiencia</h2>
+      
+      <ol class="relative border-s border-[var(--text-color)]/20 ml-3 md:ml-4">
+        <ExperienceItem 
+          role="Desarrollador de Software"
+          company="ASESCON"
+          period="Febrero 2026 – Actualidad"
+          description="Desarrollo de sistema web para procesamiento y análisis de datos contables. Manejo de archivos Excel con grandes volúmenes de información, generación de reportes y estadísticas, implementación de funcionalidades de filtrado, almacenamiento y descarga de datos."
+          stack={['React', 'FastAPI']}
+          isCurrent={true}
+        />
+        <ExperienceItem 
+          role="Asistente de Sistemas"
+          company="CompuServic"
+          period="Julio 2025 – Diciembre 2025"
+          description="Participación en diseño y mantenimiento de páginas web y sistemas internos, organización y actualización de contenido digital, gestión de datos y reportes estadísticos, soporte técnico y mantenimiento preventivo de equipos."
+        />
+      </ol>
     </div>
   </section>
 </Layout>
