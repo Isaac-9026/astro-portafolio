@@ -25,7 +25,7 @@ const { role, company, period, description, stack, isCurrent = false } = Astro.p
   <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 mb-3">
     <span class="text-lg font-medium text-[var(--accent-color)] opacity-90">{company}</span>
     <span class="hidden sm:block opacity-30">|</span>
-    <time class="text-sm font-medium opacity-60 uppercase tracking-wider">{period}</time>
+    <time class="font-mono text-sm font-medium opacity-60 uppercase tracking-wider">{period}</time>
   </div>
   
   <p class="text-lg opacity-80 leading-relaxed mb-4">
