@@ -19,6 +19,24 @@
 
   body {
     background-color: var(--bg-color);
-    color: var(--text-color);
+    font-family: var(--font-sans);
+  }
+}
+
+/* Base state for animated elements */
+.animate-on-scroll {
+  opacity: 1;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1), transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
