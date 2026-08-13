@@ -47,20 +47,26 @@ const activeClass = "text-[var(--accent-color)]";
 </header>
 
 <script>
-  const btn = document.getElementById('mobile-menu-btn');
-  const menu = document.getElementById('mobile-menu');
+  document.addEventListener('astro:page-load', () => {
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
 
-  if (btn && menu) {
-    btn.addEventListener('click', () => {
-      menu.classList.toggle('hidden');
-    });
-
-    //Close menu when clicking a link inside it
-    const links = menu.querySelectorAll('a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        menu.classList.add('hidden');
+    if (btn && menu) {
+      const toggleMenu = () => menu.classList.toggle('hidden');
+      
+      const newBtn = btn.cloneNode(true);
+      btn.parentNode?.replaceChild(newBtn, btn);
+      
+      newBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
       });
-    });
-  }
+
+      const links = menu.querySelectorAll('a');
+      links.forEach(link => {
+        link.addEventListener('click', () => {
+          menu.classList.add('hidden');
+        });
+      });
+    }
+  });
 </script>
