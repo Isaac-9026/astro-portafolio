@@ -15,7 +15,8 @@ const featuredProjects = allProjects
   <!-- Glow del Hero -->
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-[500px] bg-[var(--accent-color)]/15 blur-[120px] rounded-full pointer-events-none -z-10"></div>
   
-  <section class="pt-16 pb-12 md:pt-24 md:pb-20 max-w-3xl">
+  <div class="max-w-3xl mx-auto">
+    <section class="pt-16 pb-12 md:pt-24 md:pb-20">
     <h1 class="animate-on-scroll text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-tight">
       Hola, soy <span class="text-[var(--accent-color)] block sm:inline">Isai Isaac</span>
     </h1>
@@ -47,7 +48,7 @@ const featuredProjects = allProjects
     <div class="border-t border-[var(--text-color)]/20 pt-16 mt-16">
       <h2 class="animate-on-scroll text-2xl font-bold mb-8 opacity-100">Stack técnico</h2>
       
-      <div class="flex flex-col gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 gap-y-12">
         <div class="animate-on-scroll">
           <h3 class="text-lg font-semibold mb-4 opacity-90">Frontend</h3>
           <div class="flex flex-wrap gap-3">
@@ -135,4 +136,5 @@ const featuredProjects = allProjects
       </div>
     </div>
   </section>
+  </div>
 </Layout>
