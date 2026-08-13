@@ -19,7 +19,7 @@ const academicProjects = sortedProjects.filter(p => p.data.tier === 'academico')
       </p>
     </header>
 
-    <!-- Proyectos Principales / Serios -->
+    <!-- Proyectos Principales -->
     {seriousProjects.length > 0 && (
       <section class="mb-20">
         <h2 class="text-2xl font-bold mb-8 text-[var(--text-color)] border-b border-[var(--text-color)]/20 pb-4">Sistemas Destacados</h2>
@@ -31,7 +31,7 @@ const academicProjects = sortedProjects.filter(p => p.data.tier === 'academico')
       </section>
     )}
 
-    <!-- Proyectos Académicos / Menores -->
+    <!-- Proyectos Académicos -->
     {academicProjects.length > 0 && (
       <section class="mb-20">
         <h2 class="text-2xl font-bold mb-8 text-[var(--text-color)] border-b border-[var(--text-color)]/20 pb-4">Proyectos Académicos y Experimentos</h2>
