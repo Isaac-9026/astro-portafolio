@@ -14,6 +14,7 @@
     --bg-color: #0a0a0f;
     --text-color: #f3f4f6;
     --accent-color: #3b82f6;
+    --shadow-accent: color-mix(in srgb, var(--accent-color) 15%, transparent);
   }
 
   body {
