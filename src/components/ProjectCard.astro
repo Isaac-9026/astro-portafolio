@@ -1,0 +1,75 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import SkillBadge from './SkillBadge.astro';
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { title, description, stack, image, repoUrl, demoUrl, role, impact } = project.data;
+---
+
+<article class="flex flex-col border border-[var(--text-color)]/20 rounded-xl overflow-hidden bg-[var(--text-color)]/5 hover:border-[var(--accent-color)]/50 transition-colors duration-300">
+  <!-- Cabecera de la tarjeta con imagen y fallback -->
+  <div class="relative w-full h-48 sm:h-64 bg-[var(--accent-color)]/10 border-b border-[var(--text-color)]/10">
+    <div class="absolute inset-0 flex items-center justify-center p-6 text-center z-0">
+      <span class="text-2xl font-bold opacity-30 text-[var(--text-color)]">{title}</span>
+    </div>
+    
+    {image && (
+      <img 
+        src={image} 
+        alt={`Vista del proyecto ${title}`}
+        class="absolute inset-0 w-full h-full object-cover z-10 transition-transform hover:scale-[1.03] duration-500"
+        onerror="this.style.display='none'"
+      />
+    )}
+  </div>
+
+  <!-- Cuerpo de la tarjeta -->
+  <div class="p-6 sm:p-8 flex flex-col flex-grow">
+    <header class="mb-4">
+      <h3 class="text-2xl font-bold mb-1 opacity-100">{title}</h3>
+      <p class="text-sm font-medium text-[var(--accent-color)] mb-4 opacity-90">{role}</p>
+      <p class="text-lg opacity-80 leading-relaxed mb-6">{description}</p>
+    </header>
+
+    {stack && stack.length > 0 && (
+      <div class="flex flex-wrap gap-2 mb-6">
+        {stack.map((tech) => (
+          <SkillBadge name={tech} />
+        ))}
+      </div>
+    )}
+
+    {impact && (
+      <p class="text-sm opacity-60 italic leading-relaxed mb-8">
+        "{impact}"
+      </p>
+    )}
+
+    <!-- Pie de la tarjeta: Enlaces -->
+    <footer class="mt-auto flex flex-wrap gap-4">
+      <a 
+        href={repoUrl} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="inline-block px-6 py-2 rounded-lg border border-[var(--text-color)]/30 hover:bg-[var(--text-color)]/10 transition-colors text-sm font-semibold opacity-90"
+      >
+        Ver código
+      </a>
+      
+      {demoUrl && (
+        <a 
+          href={demoUrl} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="inline-block px-6 py-2 rounded-lg bg-[var(--accent-color)] text-white hover:opacity-90 transition-opacity text-sm font-semibold"
+        >
+          Ver demo
+        </a>
+      )}
+    </footer>
+  </div>
+</article>

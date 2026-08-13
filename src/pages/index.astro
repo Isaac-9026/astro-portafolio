@@ -1,7 +1,14 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import SkillBadge from '../components/SkillBadge.astro';
 import ExperienceItem from '../components/ExperienceItem.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+
+const allProjects = await getCollection('projects');
+const featuredProjects = allProjects
+  .filter(p => p.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <Layout title="Inicio | Portafolio Isaac Paucar">
@@ -102,6 +109,27 @@ import ExperienceItem from '../components/ExperienceItem.astro';
           description="Participación en diseño y mantenimiento de páginas web y sistemas internos, organización y actualización de contenido digital, gestión de datos y reportes estadísticos, soporte técnico y mantenimiento preventivo de equipos."
         />
       </ol>
+    </div>
+
+    <!-- SECCIÓN: PROYECTOS DESTACADOS -->
+    <div class="border-t border-[var(--text-color)]/20 pt-16 mt-16">
+      <h2 class="text-2xl font-bold mb-8 opacity-100">Proyectos destacados</h2>
+      
+      <div class="flex flex-col gap-10 mb-12">
+        {featuredProjects.map(project => (
+          <ProjectCard project={project} />
+        ))}
+      </div>
+      
+      <div class="text-center md:text-left">
+        <a href="/proyectos" class="inline-flex items-center gap-2 text-[var(--accent-color)] font-semibold hover:opacity-80 transition-opacity text-lg">
+          Ver todos los proyectos 
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
     </div>
   </section>
 </Layout>
