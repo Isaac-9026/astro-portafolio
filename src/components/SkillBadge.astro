@@ -1,11 +1,55 @@
 ---
 interface Props {
   name: string;
+  colored?: boolean;
 }
 
-const { name } = Astro.props;
+const { name, colored = false } = Astro.props;
+
+// Mapeo de nombres a los slugs de SimpleIcons
+const iconMap: Record<string, string> = {
+  'HTML': 'html5',
+  'CSS': 'css',
+  'Tailwind CSS': 'tailwindcss',
+  'JavaScript': 'javascript',
+  'TypeScript': 'typescript',
+  'React': 'react',
+  'Node.js': 'nodedotjs',
+  'Express': 'express',
+  'Spring Boot': 'springboot',
+  'FastAPI': 'fastapi',
+  'PHP': 'php',
+  'PostgreSQL': 'postgresql',
+  'MySQL': 'mysql',
+  'MariaDB': 'mariadb',
+  'NoSQL': 'mongodb',
+  'Docker': 'docker',
+  'Git': 'git',
+  'GitHub': 'github',
+};
+
+const iconSlug = iconMap[name];
+
+// Marcas cuyo logo oficial es negro/oscuro; en dark mode usamos blanco para que contrasten
+const darkBrands = ['Express', 'GitHub'];
+
+const iconUrl = iconSlug 
+  ? (colored 
+      ? (darkBrands.includes(name) ? `https://cdn.simpleicons.org/${iconSlug}/white` : `https://cdn.simpleicons.org/${iconSlug}`)
+      : `https://cdn.simpleicons.org/${iconSlug}/white`)
+  : null;
 ---
 
-<span class="animate-on-scroll inline-block px-3 py-1 font-mono text-xs font-semibold uppercase tracking-wider rounded-full border border-[var(--text-color)]/20 bg-[var(--text-color)]/5 opacity-90 whitespace-nowrap">
+<span class={`animate-on-scroll inline-flex items-center gap-2 px-3 py-1.5 font-mono text-xs font-semibold uppercase tracking-wider rounded-full border border-[var(--text-color)]/20 bg-[var(--text-color)]/5 opacity-90 whitespace-nowrap hover:bg-[var(--text-color)]/10 hover:border-[var(--text-color)]/40 transition-all duration-200 ${colored ? 'hover:scale-[1.03]' : ''}`}>
+  {iconUrl && (
+    <img 
+      src={iconUrl} 
+      alt={`${name} icon`} 
+      class="w-4 h-4"
+      width="16"
+      height="16"
+      loading="lazy"
+    />
+  )}
   {name}
 </span>

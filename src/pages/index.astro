@@ -48,47 +48,70 @@ const featuredProjects = allProjects
     <div class="border-t border-[var(--text-color)]/20 pt-16 mt-16">
       <h2 class="animate-on-scroll text-2xl font-bold mb-8 opacity-100">Stack técnico</h2>
       
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 gap-y-12">
-        <div class="animate-on-scroll">
-          <h3 class="text-lg font-semibold mb-4 opacity-90">Frontend</h3>
-          <div class="flex flex-wrap gap-3">
-            <SkillBadge name="HTML" />
-            <SkillBadge name="CSS" />
-            <SkillBadge name="Tailwind CSS" />
-            <SkillBadge name="JavaScript" />
-            <SkillBadge name="TypeScript" />
-            <SkillBadge name="React" />
-            <SkillBadge name="Next.js" />
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <!-- Bento Card: Frontend -->
+        <div class="animate-on-scroll p-6 rounded-2xl border border-[var(--text-color)]/10 bg-[var(--text-color)]/[0.02] hover:border-[var(--accent-color)]/40 hover:bg-[var(--text-color)]/[0.04] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+              <h3 class="text-base font-semibold tracking-wide opacity-95">Frontend</h3>
+            </div>
+            <div class="flex flex-wrap gap-2.5">
+              <SkillBadge name="HTML" colored />
+              <SkillBadge name="CSS" colored />
+              <SkillBadge name="Tailwind CSS" colored />
+              <SkillBadge name="JavaScript" colored />
+              <SkillBadge name="TypeScript" colored />
+              <SkillBadge name="React" colored />
+            </div>
           </div>
         </div>
 
-        <div class="animate-on-scroll">
-          <h3 class="text-lg font-semibold mb-4 opacity-90">Backend</h3>
-          <div class="flex flex-wrap gap-3">
-            <SkillBadge name="Node.js" />
-            <SkillBadge name="Express" />
-            <SkillBadge name="Spring Boot" />
-            <SkillBadge name="FastAPI" />
-            <SkillBadge name="PHP" />
+        <!-- Bento Card: Backend -->
+        <div class="animate-on-scroll p-6 rounded-2xl border border-[var(--text-color)]/10 bg-[var(--text-color)]/[0.02] hover:border-[var(--accent-color)]/40 hover:bg-[var(--text-color)]/[0.04] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <h3 class="text-base font-semibold tracking-wide opacity-95">Backend</h3>
+            </div>
+            <div class="flex flex-wrap gap-2.5">
+              <SkillBadge name="Node.js" colored />
+              <SkillBadge name="Express" colored />
+              <SkillBadge name="Spring Boot" colored />
+              <SkillBadge name="FastAPI" colored />
+              <SkillBadge name="PHP" colored />
+            </div>
           </div>
         </div>
 
-        <div class="animate-on-scroll">
-          <h3 class="text-lg font-semibold mb-4 opacity-90">Bases de datos</h3>
-          <div class="flex flex-wrap gap-3">
-            <SkillBadge name="PostgreSQL" />
-            <SkillBadge name="MySQL" />
-            <SkillBadge name="MariaDB" />
-            <SkillBadge name="NoSQL" />
+        <!-- Bento Card: Bases de datos -->
+        <div class="animate-on-scroll p-6 rounded-2xl border border-[var(--text-color)]/10 bg-[var(--text-color)]/[0.02] hover:border-[var(--accent-color)]/40 hover:bg-[var(--text-color)]/[0.04] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+              <h3 class="text-base font-semibold tracking-wide opacity-95">Bases de datos</h3>
+            </div>
+            <div class="flex flex-wrap gap-2.5">
+              <SkillBadge name="PostgreSQL" colored />
+              <SkillBadge name="MySQL" colored />
+              <SkillBadge name="MariaDB" colored />
+              <SkillBadge name="NoSQL" colored />
+            </div>
           </div>
         </div>
 
-        <div class="animate-on-scroll">
-          <h3 class="text-lg font-semibold mb-4 opacity-90">DevOps y herramientas</h3>
-          <div class="flex flex-wrap gap-3">
-            <SkillBadge name="Docker" />
-            <SkillBadge name="Git" />
-            <SkillBadge name="GitHub" />
+        <!-- Bento Card: DevOps y herramientas -->
+        <div class="animate-on-scroll p-6 rounded-2xl border border-[var(--text-color)]/10 bg-[var(--text-color)]/[0.02] hover:border-[var(--accent-color)]/40 hover:bg-[var(--text-color)]/[0.04] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center gap-2 mb-4">
+              <span class="w-2 h-2 rounded-full bg-purple-500"></span>
+              <h3 class="text-base font-semibold tracking-wide opacity-95">DevOps y herramientas</h3>
+            </div>
+            <div class="flex flex-wrap gap-2.5">
+              <SkillBadge name="Docker" colored />
+              <SkillBadge name="Git" colored />
+              <SkillBadge name="GitHub" colored />
+            </div>
           </div>
         </div>
       </div>
@@ -119,7 +142,7 @@ const featuredProjects = allProjects
     <div class="border-t border-[var(--text-color)]/20 pt-16 mt-16">
       <h2 class="animate-on-scroll text-2xl font-bold mb-8 opacity-100">Proyectos destacados</h2>
       
-      <div class="flex flex-col gap-10 mb-12">
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
         {featuredProjects.map(project => (
           <ProjectCard project={project} />
         ))}

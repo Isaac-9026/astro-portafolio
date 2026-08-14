@@ -23,7 +23,7 @@ const academicProjects = sortedProjects.filter(p => p.data.tier === 'academico')
     {seriousProjects.length > 0 && (
       <section class="mb-20">
         <h2 class="text-2xl font-bold mb-8 text-[var(--text-color)] border-b border-[var(--text-color)]/20 pb-4">Sistemas Destacados</h2>
-        <div class="flex flex-col gap-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
           {seriousProjects.map(project => (
             <ProjectCard project={project} />
           ))}
