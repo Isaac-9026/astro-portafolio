@@ -1,0 +1,33 @@
+---
+// ContactSection.astro
+---
+
+<div class="border-t border-[var(--text-color)]/20 pt-24 pb-12 mt-16 text-center">
+  <h2 class="animate-on-scroll text-3xl md:text-5xl font-extrabold tracking-tight mb-6">
+    ¿Trabajamos juntos?
+  </h2>
+  
+  <p class="animate-on-scroll text-lg md:text-xl font-medium opacity-80 max-w-xl mx-auto leading-relaxed mb-10">
+    Si estás buscando un desarrollador full-stack para tu equipo o tienes un proyecto en mente, me encantaría escucharlo.
+  </p>
+
+  <div class="animate-on-scroll flex flex-col sm:flex-row items-center justify-center gap-4">
+    <a 
+      href="mailto:isaipaucar@gmail.com" 
+      class="w-full sm:w-auto bg-[var(--accent-color)] text-white hover:opacity-90 font-semibold px-8 py-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 text-lg shadow-[0_4px_20px_var(--shadow-accent)] hover:shadow-[0_8px_30px_var(--shadow-accent)] hover:-translate-y-1"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+      Envíame un correo
+    </a>
+    
+    <a 
+      href="/contacto" 
+      class="w-full sm:w-auto bg-transparent border border-[var(--text-color)]/30 text-[var(--text-color)] hover:bg-[var(--text-color)]/10 font-semibold px-8 py-4 rounded-xl transition-all duration-300 text-lg hover:-translate-y-1"
+    >
+      Ver más redes
+    </a>
+  </div>
+</div>

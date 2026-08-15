@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import SkillBadge from '../components/SkillBadge.astro';
 import ExperienceItem from '../components/ExperienceItem.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import ContactSection from '../components/ContactSection.astro';
 
 const allProjects = await getCollection('projects');
 const featuredProjects = allProjects
@@ -158,6 +159,9 @@ const featuredProjects = allProjects
         </a>
       </div>
     </div>
+
+    <!-- SECCIÓN: CONTACTO -->
+    <ContactSection />
   </section>
   </div>
 </Layout>
