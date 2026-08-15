@@ -119,24 +119,32 @@ const featuredProjects = allProjects
     </div>
 
     <div class="border-t border-[var(--text-color)]/20 pt-16 mt-16">
-      <h2 class="animate-on-scroll text-2xl font-bold mb-8 opacity-100">Experiencia</h2>
+      <h2 class="animate-on-scroll text-2xl font-bold mb-12 opacity-100 text-center md:text-left">Experiencia</h2>
       
-      <ol class="relative border-s border-[var(--text-color)]/20 ml-3 md:ml-4">
-        <ExperienceItem 
-          role="Desarrollador de Software"
-          company="ASESCON"
-          period="Febrero 2026 – Actualidad"
-          description="Desarrollo de sistema web para procesamiento y análisis de datos contables. Manejo de archivos Excel con grandes volúmenes de información, generación de reportes y estadísticas, implementación de funcionalidades de filtrado, almacenamiento y descarga de datos."
-          stack={['React', 'FastAPI']}
-          isCurrent={true}
-        />
-        <ExperienceItem 
-          role="Asistente de Sistemas"
-          company="CompuServic"
-          period="Julio 2025 – Diciembre 2025"
-          description="Participación en diseño y mantenimiento de páginas web y sistemas internos, organización y actualización de contenido digital, gestión de datos y reportes estadísticos, soporte técnico y mantenimiento preventivo de equipos."
-        />
-      </ol>
+      <!-- Contenedor del Timeline Zigzag -->
+      <div class="relative max-w-5xl mx-auto">
+        <!-- Línea Vertical Central (Desktop) / Izquierda (Mobile) -->
+        <div class="absolute left-[19px] md:left-1/2 md:-ml-[1px] top-4 bottom-4 w-0.5 bg-gradient-to-b from-[var(--text-color)]/0 via-[var(--text-color)]/20 to-[var(--text-color)]/0"></div>
+
+        <div class="flex flex-col relative z-10">
+          <ExperienceItem 
+            role="Desarrollador de Software"
+            company="ASESCON"
+            period="Febrero 2026 – Actualidad"
+            description="Desarrollo de sistema web para procesamiento y análisis de datos contables. Manejo de archivos Excel con grandes volúmenes de información, generación de reportes y estadísticas, implementación de funcionalidades de filtrado, almacenamiento y descarga de datos."
+            stack={['React', 'FastAPI']}
+            isCurrent={true}
+            align="left"
+          />
+          <ExperienceItem 
+            role="Asistente de Sistemas"
+            company="CompuServic"
+            period="Julio 2025 – Diciembre 2025"
+            description="Participación en diseño y mantenimiento de páginas web y sistemas internos, organización y actualización de contenido digital, gestión de datos y reportes estadísticos, soporte técnico y mantenimiento preventivo de equipos."
+            align="right"
+          />
+        </div>
+      </div>
     </div>
 
     <!-- SECCIÓN: PROYECTOS DESTACADOS -->
