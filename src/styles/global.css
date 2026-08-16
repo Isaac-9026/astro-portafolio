@@ -17,6 +17,13 @@
     --shadow-accent: color-mix(in srgb, var(--accent-color) 15%, transparent);
   }
 
+  html.light {
+    --bg-color: #fafafa;
+    --text-color: #111827;
+    --accent-color: #2563eb; /* Slightly darker blue for better contrast on white */
+    --shadow-accent: color-mix(in srgb, var(--accent-color) 20%, transparent);
+  }
+
   body {
     background-color: var(--bg-color);
     font-family: var(--font-sans);

@@ -1,4 +1,6 @@
 ---
+import ThemeToggle from './ThemeToggle.astro';
+
 const pathname = Astro.url.pathname;
 const isHome = pathname === '/';
 const isProyectos = pathname.startsWith('/proyectos');
@@ -15,25 +17,29 @@ const activeClass = "text-[var(--accent-color)]";
       Isaac Paucar
     </a>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex gap-8">
-      <a href="/" class:list={[linkClass, { [activeClass]: isHome }]}>Inicio</a>
-      <a href="/proyectos" class:list={[linkClass, { [activeClass]: isProyectos }]}>Proyectos</a>
-      <a href="/contacto" class:list={[linkClass, { [activeClass]: isContacto }]}>Contacto</a>
-    </nav>
+    <div class="flex items-center gap-2 md:gap-8">
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex gap-8 items-center">
+        <a href="/" class:list={[linkClass, { [activeClass]: isHome }]}>Inicio</a>
+        <a href="/proyectos" class:list={[linkClass, { [activeClass]: isProyectos }]}>Proyectos</a>
+        <a href="/contacto" class:list={[linkClass, { [activeClass]: isContacto }]}>Contacto</a>
+      </nav>
 
-    <!-- Mobile Menu Button -->
-    <button 
-      id="mobile-menu-btn"
-      class="md:hidden p-2 text-gray-300 hover:text-white focus:outline-none" 
-      aria-label="Abrir menú"
-    >
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="4" x2="20" y1="12" y2="12" />
-        <line x1="4" x2="20" y1="6" y2="6" />
-        <line x1="4" x2="20" y1="18" y2="18" />
-      </svg>
-    </button>
+      <ThemeToggle />
+
+      <!-- Mobile Menu Button -->
+      <button 
+        id="mobile-menu-btn"
+        class="md:hidden p-2 text-[var(--text-color)] hover:opacity-80 focus:outline-none" 
+        aria-label="Abrir menú"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="4" x2="20" y1="12" y2="12" />
+          <line x1="4" x2="20" y1="6" y2="6" />
+          <line x1="4" x2="20" y1="18" y2="18" />
+        </svg>
+      </button>
+    </div>
   </div>
 
   <!-- Mobile Navigation Menu -->
